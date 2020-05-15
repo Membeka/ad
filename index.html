@@ -1,60 +1,43 @@
-<div class='heart'></div>
-<style>
-    body{
-        padding:40vh 0;
-        background-color:#fff
-    }
+<!DOCTYPE html>
+<html>
 
-    .heart {
-        animation: heartbeat 1s infinite;
-        background-color: red;
-        display: inline-block;
-        height: 50px;
-        margin: 0 10px;
-        position: relative;
-        top: 0;
-        transform: rotate(-45deg);
-        position: absolute;
-        left: 45%; top: 45%;
-        width: 50px;
-    }
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    .heart:before,
-    .heart:after {
-        content: "";
-        background-color: red;
-        border-radius: 50%;
-        height: 50px;
-        position: absolute;
-        width: 50px;
-    }
+<body>
 
-    .heart:before {
-        top: -25px;
-        left: 0;
-    }
+  <img src="https://lodkamarket.ru/upload/iblock/a01/4c78fcf97b42b8af5036457f859ca3e4.png" id="boat">
 
-    .heart:after {
-        left: 25px;
-        top: 0;
-    }
+  <script>
+    boat.onclick = function() {
 
-    @keyframes heartbeat
-    {
-        0%
-        {
-            transform: scale( 1 )
-            rotate(-45deg);
+      this.onclick = null; // только первый клик сработает
+
+      var times = 1;
+
+      function go() {
+        if (times % 2) {
+          boat.classList.remove('back');
+          boat.style.marginLeft = 100 * times + 200 + 'px';
+        } else {
+          boat.classList.add('back');
+          boat.style.marginLeft = 100 * times - 200 + 'px';
         }
-        20%
-        {
-            transform: scale( 1.25 )
-            rotate(-45deg);
-        }
-        40%
-        {
-            transform: scale( 1.5 )
-            rotate(-45deg);
-        }
+
+      }
+
+      go();
+
+      boat.addEventListener('transitionend', function() {
+        times++;
+        go();
+      });
     }
-</style>
+  </script>
+
+
+</body>
+
+</html>
