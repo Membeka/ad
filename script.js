@@ -1,3 +1,5 @@
+alert(`Fire - Space \n Left,Right - ←, → \n F5 - Reload`)
+
 const blocks = document.querySelectorAll('.game div');
 
 const countRow = Math.sqrt(blocks.length);
@@ -43,6 +45,7 @@ const moveEnemies = () => {
 
     if (blocks[playerIndex].classList.contains('enemy')) {
         alert('Game Over');
+        alert('Press F5 to Reload')
         endGame();
         return
     }
@@ -50,6 +53,7 @@ const moveEnemies = () => {
     for (let i = 0; i <= indexEnemies.length; i++) {
         if (indexEnemies[i] > blocks.length - countRow) {
             alert('Game Over');
+            alert('Press F5 to Reload')
             endGame();
             return
         }
@@ -57,6 +61,7 @@ const moveEnemies = () => {
 
     if (killEnemy.length === indexEnemies.length) {
         alert('You Win!')
+        alert('Press F5 to Reload')
         endGame();
         return;
     }

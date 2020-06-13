@@ -42,8 +42,3 @@ body {
 .bullet {
     background: linear-gradient(90deg, rgb(0, 0, 1) 45%, rgb(200, 200, 10) 50%, rgb(0, 0, 1) 55%);
 }
-
-.text {
-    font-size: 50px;
-    color: white;
-}
