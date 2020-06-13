@@ -61,7 +61,7 @@ const moveEnemies = () => {
         return;
     }
 
-    setTimeout(moveEnemies, 300);
+    setTimeout(moveEnemies, 100);
 };
 
 moveEnemies();
@@ -91,7 +91,7 @@ document.addEventListener('keydown', movePlayer);
 //fire
 
 const fire = event => {
-    if (event.code === "Space") {
+    if (event.code === 'Space') {
         let bulletIndex = playerIndex;
 
         const flyBullet = () => {
